@@ -509,6 +509,7 @@ function validationReturnValueHandler(attribute, value, model, validator) {
  * @return {Array}
  */
 function getValidatorsFor(attribute, model) {
+  if(!model) return Ember.A();
   const validators = get(model, `validations._validators.${attribute}`);
 
   if (!isNone(validators)) {
